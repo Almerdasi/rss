@@ -1,0 +1,171 @@
+<html>
+<head>
+    
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <title>New own RSS reader demonstration</title>
+    <link rel="stylesheet" type="text/css" href="main1.css" />
+    <script type="text/javascript" src="rss.js"></script>
+       
+</head>
+<body>
+<!---------------------------- regester/login -------------------------------------------->
+    <div class="container" style="
+    background:#FFF;
+        text-align: center;
+
+ 
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px
+">   
+    
+    <form id="register-form"> 
+            <input id="name1" type="text" placeholder="Name" value=""/>
+            <input id="pw" type="password" placeholder="Password" value=""/>
+            <button id="rgstr_btn" type="submit" value="get Account" onClick="store()">Regester</button> 
+        </form>
+
+        <form id="login-form"> 
+            <input id="userName" type="text" placeholder="Enter Username" value=""/>
+            <input id="userPw" type="password" placeholder="Enter Password" value=""/>
+            <button id="login_btn" type="submit" value="Login" onClick="check()">Login</button>
+       </form>
+
+    <script type="text/javascript" language="javascript" src="login.js"></script>
+        
+    <div id="result"></div>
+        <div class="container" id = "container" >
+    <div >
+    <script src = "lastVisit.js"></script>
+    <br>
+    <select class="selectpicker" id = "all" onchange = "display()">
+        
+        <option id = "showall" value="showall">All News</option>
+        <option id = "world" value="world">World</option>
+        <option id = "tech" value="tech">Tech</option>
+        <option id = "sports" value="sports">Sports</option>
+        <option id = "weather" value="weather">Weather</option>
+    </select>
+    </div>
+    </div>
+<!---------------------------- main -------------------------------------------->
+    
+<!-- --------------------------------------World--------------------------------------- -->
+    <div  id="worldId" style="
+    background:#FFF;
+ 
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px
+">
+        <h1>World</h1>
+        <p>BBC</p>
+        <div class="post_results" id="post_results1" rss_num="4" rss_url="http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <p>CNN</p>
+        <div class="post_results" id="post_results2" rss_num="4" rss_url="http://rss.cnn.com/rss/edition_world.rss">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+            
+        </div>
+        <p>Yahoo</p>
+        <div class="post_results" id="post_results3" rss_num="4" rss_url="http://news.yahoo.com/rss/us/">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <p>Reuters</p>
+        <div class="post_results" id="post_results4" rss_num="4" rss_url="http://feeds.reuters.com/Reuters/worldNews">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+<!-- -----------------------------------Tech-------------------------------------------- -->
+    <div  id="techId" style="
+    background:#FFF;
+ 
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px
+">
+        <h1>Tech</h1>
+        <p>BCC</p>
+        <div class="post_results" id="post_results5" rss_num="4" rss_url="http://feeds.bbci.co.uk/news/technology/rss.xml">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <p>CNN</p>
+        <div class="post_results" id="post_results6" rss_num="4" rss_url="http://rss.cnn.com/rss/cnn_tech.rss">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+            
+        </div>
+        <p>Reuters</p>
+        <div class="post_results" id="post_results7" rss_num="4" rss_url="http://feeds.reuters.com/reuters/technologyNews">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+<!-- ----------------------------------sports--------------------------------------------- -->
+    <div  id="sportsId" style="
+    background:#FFF;
+ 
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px
+">
+        <h1>Sports</h1>
+        <p>BCC</p>
+        <div class="post_results" id="post_results8" rss_num="4" rss_url="http://www.bbc.com/sport/rss.xml">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <p>CNN</p>
+        <div class="post_results" id="post_results9" rss_num="4" rss_url="http://rss.cnn.com/rss/edition_sport.rss">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <p>Yahoo</p>
+        <div class="post_results" id="post_results10" rss_num="4" rss_url="http://news.yahoo.com/rss/sports">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <p>Reuters</p>
+        <div class="post_results" id="post_results11" rss_num="4" rss_url="http://feeds.reuters.com/reuters/sportsNews">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+<!-- -------------------------------------weather------------------------------------------ -->
+    <div  id="wheatherId" style="
+    background:#FFF;
+ 
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px
+">
+        <h1>Weather</h1>
+        <p>Yahoo</p>
+        <div class="post_results" id="post_results12" rss_num="4" rss_url="http://news.yahoo.com/rss/weather/">
+            <div class="loading_rss">
+                <img alt="Loading..." src="Images/loading.gif" />
+            </div>
+        </div>
+    </div>
+    </div>    
+</body>
+</html>
